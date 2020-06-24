@@ -1,0 +1,133 @@
+
+.main-background {
+/*    gradient background : linear-gradient(그라데이션 방향, 컬러1, 컬러2)*/
+    background-image: linear-gradient(to bottom, #499add, #4e61c0);
+    height: 550px;
+    padding: 20px;
+    color: white;
+}
+
+.main-text {
+    float: left;
+    margin-top: 50px;
+}
+
+.main-text h1 {
+    font-size: 40px;
+}
+
+.main-text p {
+    font-size: 25px;
+}
+
+.container img {
+    width: 400px;
+    float: right;
+    margin-top: 135px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+.container::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.btn {
+    width: 170px;
+    height: 50px;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-black {
+    background: #404040;
+}
+
+.btn-black:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.explain-container p {
+    color: lightgray;
+    margin-bottom: 35px;
+}
+
+.main-explain {
+    width: 1200px;
+    margin: 100px;
+    text-align: center;
+}
+
+.service-items div {
+    display: inline-block;
+    padding: 20px;
+}
+
+.service-icon {
+    background: white;
+    color: #4e61c0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.service {
+    background-color: #4e61c0;
+    padding: 100px;
+    color: white;
+}
+
+.service-items p {
+    color: lightgray;
+    margin-top: -5px;
+}
+
+
+/*Responsive css*/
+@media screen and (max-width: 992px) {
+    .container img {        
+        width: 260px;
+        display: block;
+        float: none;
+        margin: auto;
+        margin-top: 42px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .service-items div {
+        display: block;
+    }
+    
+}
+
+.shadowTest {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white;
+    color: red;
+}
+.shadowTest::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+}
+.shadowTest::-webkit-progress-value {
+    background-color: red;
+    border-radius: 2px;
+}
+.shadowTest::-moz-progress-bar {
+    background-color: red;
+    border-radius: 2px;
+}
