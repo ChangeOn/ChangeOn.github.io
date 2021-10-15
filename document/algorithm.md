@@ -1,4 +1,4 @@
-> 섹션 2. 순환 (Recursion)
+> **섹션 2. 순환 (Recursion)**
 + Reursion 응용 - 미로 1
     ```java
     public class Maze {
@@ -114,6 +114,64 @@
                 }
             }
             return true;
+        }
+    }
+    ```
++ 멱집합 (powerset)
+    ```java
+    private static char data[] = {'a','b','c','d','e','f'};
+    private static int n = data.length;
+    private static boolean [] include = new boolean [n];
+                            // ⬆, ⬇ : 상태공간 트리에서 현재 나의 위치를 표현한다.
+    public static void powerSet(int k) {
+        if (k==n) {     // 만약 현재 내 위치가 리프노드라면
+            for(int i=0; i<n; i++) {
+                if(include[i]) {
+                    System.out.print(data[i] + " ");
+                    System.out.println();
+                    return;
+                }
+            }
+        }
+
+        include[k]=false;
+        powerSet(k+1);      // 먼저 왼쪽으로 내려갔다가
+        include[k]=true;
+        powerSet(k+1);      // 오른쪽으로 내려간다.
+    }
+
+    public static void main(String[] args) {
+        // 처음 호출할 때는 poserSet(0)로 한다.
+        // 즉 P는 공집합이고, S는 전체집합
+        powerSet(0);
+    }
+    ```
+
+> **섹션 3. 정렬 (Updated)**
++ 합병정렬(merge sort)
+    ```java
+    // O(N)
+    void merge(int data[], int p, int q, int r) {
+        int i=p, j=q+1, k=p;
+        int tmp[data.length()];
+
+        while(i<=q && j<=r){
+            if(data[i] <=data[j]>) {
+                tmp[k++]=data[i++];
+            }else {
+                tmp[k++]=data[j++];
+            }
+        }
+
+        while(i<=q) {
+            tmp[k++]=data[i++];
+        }
+        while(i<=r) {
+            tmp[k++]=data[j++];
+        }
+
+        for(int i=p; i<=r; i+++){
+            data[i]=tmp[i];
         }
     }
     ```
