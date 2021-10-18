@@ -117,6 +117,7 @@
         }
     }
     ```
+
 + 멱집합 (powerset)
     ```java
     private static char data[] = {'a','b','c','d','e','f'};
@@ -141,14 +142,13 @@
     }
 
     public static void main(String[] args) {
-        // 처음 호출할 때는 poserSet(0)로 한다.
-        // 즉 P는 공집합이고, S는 전체집합
+        // 처음 호출할 때는 powerSet(0)로 한다. 즉 P는 공집합이고, S는 전체집합
         powerSet(0);
     }
     ```
 
 > **섹션 3. 정렬 (Updated)**
-+ 합병정렬(merge sort)
++ 합병정렬 (merge sort)
     ```java
     // O(N)
     void merge(int data[], int p, int q, int r) {
@@ -173,5 +173,29 @@
         for(int i=p; i<=r; i+++){
             data[i]=tmp[i];
         }
+    }
+    ```
+
++ 빠른정렬 (quicksort)
+    ```java
+    quickSort(A[], p, r) {
+        if(p<r) {
+            q = partition(A[], p, r);
+            quickSort(A[], p, q-1);
+            quickSort(A[], q+1, r);
+        }
+    }
+
+    partition(A[], p, r) {
+        int x = A[r];
+        int i = p-1;
+        for (int j=p; j<r-1; j++){
+            if(A[j] <= x) {
+                i = i+1;
+                exchange A[i] and A[j];
+            }
+        }
+        exchange A[i+1] and A[r];
+        return i+1;
     }
     ```
