@@ -199,3 +199,33 @@
         return i+1;
     }
     ```
++ 힙 정렬 (heap sort)
+    ```java
+    public class Heap {
+        // MAX-HEAPIFY : 트리 전체를 heap으로 만드는 기본 연산
+        // pseudo code
+        void maxHeapify(int [] A, int i) {
+            if(!child of A[i]){
+                return;
+            }
+            int k = index of the biggest child of A[i];
+            if(A[i] >= A[k]){
+                return;
+            }
+            exchange A[i] and A[k];
+            maxHeapify(A, k);
+        }
+
+        // iterative version
+        void maxHeapify2(int [] A, int i) {
+            while(child of A[i]){
+                int k = index of the biggest child of A[i];
+                if(A[i] >= A[k]){
+                    return;
+                }
+                exchange A[i] and A[k];
+                i = k;
+            }
+        }
+    }
+    ```
