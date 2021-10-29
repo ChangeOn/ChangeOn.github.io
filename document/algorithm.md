@@ -227,5 +227,47 @@
                 i = k;
             }
         }
+
+        // 정렬할 배열을 힙으로 만들기
+        // pseudo code
+        BUILD-MAX-HEAP (A)
+        int heap-size[A] = length[A]
+        for (i = length[A]/2; i=1; i--) {
+            MAX-HEAPIFY(A, i);
+        }
+        
+        void heapSort(A) {
+            BUILD-MAX-HEAP(A);
+            for(i = heap_size; i=2; i--){
+                exchange A[1] and A[i];
+                heap_size = heap_size - 1;
+                maxHeapify(A, 1);
+            }
+        }
+
+        <!-- 힙(heap)의 다른 응용 : 우선순위 큐 (priority qeueu)-->
+        // 1. INSERT(x)
+        MAX-HEAP-INSERT(A, key) {
+            heap_size = heap_size + 1;
+            A[heap_size] = key;
+            i = heap_size;
+            while (i>1 && A[PARENT(i)] < A[i]>) {
+                exchnage A[i] and A[PARENT(i)];
+                i = PARENT(i);
+            }
+        }
+
+        // 2.EXTRACT_MAX()
+        int heapExtractMax(int[] A) {
+            if (heap-size[A] < 1) {
+                System.out.println("heap underflow");
+                return;
+            }
+            int max = A[1];
+            A[1] = A[heap-size[A]];
+            heap-size[A] = heap-size[A] - 1;
+            maxHeapify(A, 1);
+            return max;
+        }
     }
     ```
