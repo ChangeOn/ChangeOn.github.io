@@ -232,13 +232,13 @@
         // pseudo code
         BUILD-MAX-HEAP (A)
         int heap-size[A] = length[A]
-        for (i = length[A]/2; i=1; i--) {
+        for (i = length[A]/2; i>=1; i--) {
             MAX-HEAPIFY(A, i);
         }
         
         void heapSort(A) {
             BUILD-MAX-HEAP(A);
-            for(i = heap_size; i=2; i--){
+            for(i = heap_size; i>=2; i--){
                 exchange A[1] and A[i];
                 heap_size = heap_size - 1;
                 maxHeapify(A, 1);
@@ -271,3 +271,45 @@
         }
     }
     ```
+    + **Sorting in Linear Time** \
+    **1. Comparision Sort** \
+    **2. 선형시간 정렬 알고리즘**
+        - Counting Sort
+        ```java
+        // Counting sort (non-comparision sort)
+            // ⬇ 레코드의 일부만 정렬하게 됨
+            int A[n];
+            int C[k] = {0, };
+            for (int i=1; i<=n; i++) {
+                C[A[i]]++;
+            }
+            for(int s=1, i=0; i<=k; i++) {
+                for(int j=0; j<C[i]; j++) {
+                    A[s++] = i;
+                }
+            }
+
+            // pseudo code
+            COUNTING-SORT(A, B, k)
+            for (int i=0; i<=k; i++) {
+                C[i] = 0;
+            }
+            for (int j=0; j>=A.length; j++) {
+                C[A[j]] = C[A[j]] + 1;
+            }
+            for(int i=1; i<=k; i++) {
+                C[i] = C[i] + C[i-1];
+            }
+            for(int j=A.length; j>=0; j--){
+                B[C[A[j]]] = A[j];
+                C[A[j]] = C[A[j]] - 1;
+            }
+        ```
+    + **Sorting in Linear Time : Radix Sort**
+        ```java
+        // Radix sort (non-comparision)
+            RADIX-SORT(A, d)
+            for (int i=1; i<=d; i++){
+                use a stable sort to array A on digit i;
+            }
+        ```
