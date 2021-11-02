@@ -313,3 +313,31 @@
                 use a stable sort to array A on digit i;
             }
         ```
+
+> **섹션 4. 검색트리 - 이진검색트리**
++ 트리와 이진트리
+    - 이진트리 순회 (Inorder, Preorder, Postorder, Level-order)
+    ```java
+        // binary tree traversal
+        // 중순위(Inorder)
+        INORDER-TREE-TRAVERSAL(x) { // x: 루트노드
+            if (x != null) {
+                INORDER-TREE-TRAVERSAL(left[x]);
+                print(key[x]);
+                INORDER-TREE-TRAVERSAL(right[x]);
+            }
+        }
+        // 선순위(Preorder)
+        // 후순위(Postorder)
+
+        // Level-Order 순회
+        LEVEL-ORDER-TRAVERSAL() {
+            visit the root;
+            Q = root;
+            while (Q != null) {
+                v = dequeue(Q);
+                visit children of v;
+                enqueue children of v into Q;
+            }
+        }
+    ```
