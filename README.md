@@ -13,10 +13,10 @@
 3. 코드는 필요 시 마크다운 형식으로 정리합니다.
 
 #### 📝 학습기록
-| 목차                         |                            Link                             |
-| :-------------------------- | :----------------------------------------------------------: |
-| 01장 알고리즘의 분석          |  [:link: LINK]()  |
-| 02장 순환 (Recursion)        |  [:link: LINK](./document/CleverProgramming/Chapter_01.md)  |
-| 03장 정렬 (updated)          |  [:link: LINK](./document/CleverOrogramming/Chapter_02.md)  |
+| 목차                          |                            Link                             |
+| :---------------------------- | :---------------------------------------------------------: |
+| 01장 알고리즘의 분석          |    |
+| 02장 순환 (Recursion)         |  [:link: LINK](./document/CleverProgramming/Chapter_01.md)  |
+| 03장 정렬 (updated)           |  [:link: LINK](./document/CleverOrogramming/Chapter_02.md)  |
 | 04장 검색트리 - 이진검색트리   |  [:link: LINK](./document/CleverProgramming/Chapter_03.md)  |
 | 05장 검색트리 - 레드블랙트리   |  [:link: LINK](./document/CleverProgramming/Chapter_04.md)  |
