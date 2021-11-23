@@ -77,9 +77,8 @@
         }
 
         // INSERT
-        TREE-INSERT(T, z){
-            y = null;
-            x = root[T];
+        TREE-INSERT(T, z){ 
+            x = root[T]; // x를 -1로 따라가는 pointer. (z가 삽입될 위치)
             while(x != null){
                 y = x;
                 if(key[z] < key[x]){
