@@ -1,4 +1,5 @@
-## 투데이 아이 럴ㄴㄷ
+# TIL, 구직관련
+## **Today I Learned**
 <p align="center">
   <img src="https://cdn.inflearn.com/wp-content/uploads/algorith.png" width="600" alt="Lecture Logo"/>
 </p>
@@ -20,3 +21,14 @@
 | 03장 정렬 (updated)           |  [:link: LINK](./document/cleverOrogramming/Chapter_02.md)  |
 | 04장 검색트리 - 이진검색트리   |  [:link: LINK](./document/cleverProgramming/Chapter_03.md)  |
 | 05장 검색트리 - 레드블랙트리   |  [:link: LINK](./document/cleverProgramming/Chapter_04.md)  |
+<br><br>
+
+
+-------------------------------
+## **[인프런 FE 지원결과](./document/inflearnFETest/README.md)**
+|  2021-11-26     |      결과     |
+| :-------------- | :-----------: |
+| 서류            |     _합_      |
+| 과제/코딩테스트 |     _불합_    |
+| 면접            |       -       |
+| 최종            |       -       |
