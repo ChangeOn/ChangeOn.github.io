@@ -19,6 +19,15 @@
             
         }
     ```
+    > `레드-블랙 트리의 정의`  
+     다음 조건을 만족하는 이진탐색트리
+     1. 각 노드는 red 혹은 black 이고,  
+     2. 루트노드는 black
+     3. 모든 리프노드(즉, NTL노드)는 black이며  
+     4. red노드의 자식노드들은 전부 black (즉, red노드는 연속되어 등장하지 않음)  *red-red violation  
+     5. 모든 노드에 대해서 그 노드로부터 자손인 리프노드에 이르는 모든 경로에는 동일한 개수의 black노드가 존재한다. *BH:black height
+
+
 + red black tree - 2 (INSERT)
     ```java
         RedBlack-INSERT(T, z){
@@ -85,5 +94,77 @@
                 }
             }
             color[root[T]] = BLACK; // root가 RED인 채로 while문이 종료될 경우가 있으므로 BLACK으로 바꿔줌.
+        }
+    ```
+
++ red black tree - 3 (DELETE)
+    ```java
+        RB-DELETE(T, z){
+            if(left[z] === null || right[z] === null){
+                y = z;
+            }else {
+                y = TREE-SUCCESSOR(z);
+            }
+
+            if(left[y] != null){
+                x = left[y];
+            }else{
+                x = right[y];
+            }
+
+            p[x] = p[y];
+            if(p[y] == null){
+                root[T] = x;
+            }else if(y == left[p[y]]){
+                left[p[y]] = x;
+            }else {
+                right[p[y]] = x;
+            }
+
+            if(y != z){
+                key[z] = key[y];    // y의 satellite data를 z로 복사
+            }
+
+            if(color[y] == BLACK){
+                RB-DELETE-FIXUP(T, x)
+            }
+
+            return y;
+        }
+
+        RB-DELETE-FIXUP(T, x){
+            while(x != root[T] && color[x] == BLACK){
+                if(x == left[p[x]]){
+                    w = right[p[x]];    // w = x의 형제노드
+                    if(color[w] == RED){
+                        <!-- Case1: x가 부모늬 왼쪽 자식이고, w가 RED인 경우 -->
+                        color[w] == BLACK;
+                        color[p[x]] = RED;
+                        LEFT-ROTATE(T, p[x]);
+                        w = right[p[x]];
+                    }
+                    if(color[left[w]] == BLACK && color[right[w]] == BLACK){
+                        <!-- Case2: 〃, w와 w의 자식들이 BLACK인 경우 -->
+                        color[w] = RED;
+                        x = p[x];
+                    }else if(color[right[w] == BLACK]){
+                        <!-- Case3: 〃, w는 BLACK, w의 왼쪽자식이 RED인 경우 -->
+                        color[left[w]] = BLACK;
+                        color[w] = RED;
+                        RIGHT-ROTATE(T, w);
+                        w = right[p[x]];
+                        <!-- Case4: 〃, w는 BLACK, w의 오른쪽자식이 RED인 경우 -->
+                        color[w] = color[p[x]];
+                        color[p[x]] = BLACK;
+                        color[right[w]] = BLACK;
+                        LEFT-ROTATE(T, p[x]);
+                        x = root[T];
+                    }
+                }else {
+                    // x == right[p[x]]인 경우 (Case 4,5,6,7,8)
+                    // same as then clause with "right" and "left" exchange
+                }
+            }
+            color[x] = BLACK;
         }
     ```
