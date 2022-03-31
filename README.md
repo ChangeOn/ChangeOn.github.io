@@ -23,11 +23,10 @@
 
 
 <br/><br/>
+<!--
 ## 구직로그
-### **[인프런 FE](./document/inflearnFETest/README.md)**
-|  2021-11-26     |      결과     |
-| :-------------- | :-----------: |
-| 서류            |      _P_      |
-| 과제/코딩테스트  |      _F_      |
-| 면접            |       -       |
-| 최종            |       -       |
+### **[인프런](./document/inflearnFETest/README.md)**
+### **[RIDI(라프텔)]()**
+### **[무신사로지스틱스](./document/musinsaFETest/README.md)**
+### **[29CM]()**
+ -->
